@@ -70,9 +70,15 @@ app.post('/contact-us', (req, res) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      res.status(500).send(error);
+      res.status(500).send({
+        status: 500,
+        error
+      });
     } else {
-      res.status(200).send('Email sent: ' + info.response);
+      res.status(200).send({
+        status: 200,
+        message: 'Email sent: ' + info.response
+      });
     }
   });
 });
@@ -95,9 +101,15 @@ app.post('/compro', (req, res) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      res.status(500).send(error);
+      res.status(500).send({
+        status: 500,
+        error
+      });
     } else {
-      res.status(200).send('Email sent: ' + info.response);
+      res.status(200).send({
+        status: 200,
+        message: 'Email sent: ' + info.response
+      });
     }
   });
 });
