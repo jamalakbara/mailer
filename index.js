@@ -53,6 +53,11 @@ app.post('/contact-us', (req, res) => {
           <td style="font-weight: bold">${name}</td>
         </tr>
         <tr>
+          <td style="font-weight: bold">Email</td>
+          <td style="font-weight: bold">:</td> 
+          <td style="font-weight: bold">${from}</td>
+        </tr>
+        <tr>
           <td style="font-weight: bold">Company</td>
           <td style="font-weight: bold">:</td> 
           <td style="font-weight: bold">${company}</td>
