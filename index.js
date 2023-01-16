@@ -16,9 +16,9 @@ const port = process.env.PORT || 5000;
 
 const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  host: 'smtp.gmail.com',
-  secure: false,
+  host: process.env.EMAIL_HOST,
+  port: process.env.EMAIL_PORT,
+  secure: true,
   auth: {
     user: process.env.USER_EMAIL,
     pass: process.env.USER_PASSWORD
@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 app.post('/contact-us', (req, res) => {
   const { from, subject, body, name, company } = req.body;
   const mailOptions = {
-    from,
+    from: `${from} <${process.env.USER_EMAIL}>`,
     to: process.env.USER_EMAIL,
     subject,
     html: `

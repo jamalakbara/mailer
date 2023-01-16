@@ -1,6 +1,6 @@
 {
   "name": "mailer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "this application is to send mail from node js",
   "main": "index.js",
   "scripts": {
